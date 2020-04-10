@@ -2,10 +2,10 @@
 Here are some calculus assigments, exercises, algorithms which i've done in 2020 while studying at College
 
 # Subjects 📚📋
-* [Discrete Math](#Discrete-Math-💖 "Goto Discrete Math 💖") 
-   * [Sets](#Sets-Calculator-🖩 "Goto Sets Calculator 🖩")
-* [Numerical Analysis](#Numerical-Analysis-📊 "Goto Numerical Analysis 📊")
-   * [Regression](#Regression-📉 "Goto Regression 📉")
+* [Discrete Math](#discrete-math-💖 "Goto #discrete-math-") 
+   * [Sets](#sets-calculator-🖩 "Goto #sets-calculator-")
+* [Numerical Analysis](#numerical-analysis-📊 "Goto #numerical-analysis-")
+   * [Regression](#regression-📉 "Goto #regression-")
 
 # Discrete Math 💖
 # Sets Calculator 🖩
