@@ -1,25 +1,26 @@
-#f_row - first row 
-# s_row - second 
-# th_row - third 
-# fr_row - fourth
+import numpy as np 
 
-f_row = [11, 2.6, 0.4, -3.3, 51.27]
-s_row = [-4.1, 22, 2.2, -3.5, -64.66]
-th_row = [-1.2, -15.7, 33, -0.1, -104.96]
-fr_row = [-7.7, -6.3, 4.8, 44, -27.12]
+def jacobi(A, B, x_init, epsilon=0.001, max_iterations=500):
+    D = np.diag(np.diag(A))
+    LU = A - D
+    x = x_init
+    for i in range(max_iterations):
+        D_inv = np.diag(1 / np.diag(D)) #inverse diagonal
+        x_new = np.dot(D_inv, B - np.dot(LU, x))
+        if np.linalg.norm(x_new - x) < epsilon:
+            return x_new
+        x = x_new
+        print(i, x)
 
+a = np.array([
+    [11, 2.6, 0.4, -3.3],
+    [-4.1, 22, 2.2, -3.5],
+    [-1.2, -15.7, 33, -0.1],
+    [-7.7, -6.3, 4.8, 44]
+])
+b = np.array([51.27, -64.66, -104.96, -27.12])
 
-matrix_norm = max( f_row[1] + f_row[2] + f_row[3] / f_row[4],
-                   s_row[0] + s_row[2] + s_row[3] / s_row[4],
-                   th_row[0] + th_row[1] + th_row[3] / th_row[4],
-                   fr_row[0] + fr_row[1] + fr_row[2] / fr_row[4]
- )  
-
-x0 = f_row[4] / f_row[0], s_row[4] / s_row[1], th_row[4] / th_row[2], fr_row[4] / fr_row[3]
-
-print(f_row)
-print(s_row)
-print(th_row) 
-print(str(fr_row) + "\n")
-print("||M|| = " + str(matrix_norm)[:7])
-print("x0 = " + str(x0))
+x_init = np.zeros(len(b)) #starting vector
+print("a:",a,"\n b:" ,b, "\n")
+x = jacobi(a, b, x_init)
+print("\nfinal:", x)
