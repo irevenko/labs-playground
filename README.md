@@ -38,6 +38,7 @@ Used [tabulate](https://pypi.org/project/tabulate/) to beatify the output
 * Bool algebra
 * Matrices
 * Regression
+* Cryptography Basics
 
 
 # License 📑 
